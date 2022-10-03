@@ -14,7 +14,6 @@ public class CorrectedFieldsController {
     private final Logger log = LoggerFactory.getLogger(PersonDetailsController.class);
     @Autowired
     private CorrectedFieldsService correctedFieldsService;
-
     @PostMapping("/update/{reqID}")
     public MessageDto updatePersonDetailsById(@RequestBody PersonDetailsDto personDetailsDto , @PathVariable("reqID") int reqID)
     {

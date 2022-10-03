@@ -3,17 +3,14 @@ package com.spring.implementation.service;
 import com.spring.implementation.data.transfer.object.MessageDto;
 import com.spring.implementation.data.transfer.object.PersonDetailsDto;
 import com.spring.implementation.domain.CorrectedFieldsDomain;
-import com.spring.implementation.domain.PersonDetailsDomain;
 import com.spring.implementation.repository.CorrectedFieldsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CorrectedFieldsService {
-
     @Autowired
     private CorrectedFieldsRepository correctedFieldsRepository;
-
     public MessageDto updatePersonDetailsById(PersonDetailsDto personDetailsDto, int id)
     {
         if(correctedFieldsRepository.findById(id).isPresent()){

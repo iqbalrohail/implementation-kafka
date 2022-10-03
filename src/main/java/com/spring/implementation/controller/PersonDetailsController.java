@@ -18,16 +18,16 @@ public class PersonDetailsController {
     private final Logger log = LoggerFactory.getLogger(PersonDetailsController.class);
     @Autowired
     private PersonDetailsService personDetailsService;
-
     @GetMapping("/getAll")
     public List<PersonDetailsDomain> getAllDetail()
     {
-        log.info("getAll call have been received at details/add ");
+        log.info("getAll call have been received at details/add");
         return personDetailsService.getAllDetails();
     }
-
-
-
-
-
+    @PostMapping("/add")
+    public MessageDto addPersonDetails(@RequestBody PersonDetailsDto personDetailsDto)
+    {
+        log.info("add call have been received at details/add with DTO "+personDetailsDto);
+        return personDetailsService.addPersonalDetails(personDetailsDto);
+    }
 }

@@ -23,13 +23,11 @@ public class KafkaProducerConfig {
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG , StringSerializer.class);
         return props;
     }
-
     @Bean
     public ProducerFactory<String , String> producerFactory()
     {
         return new DefaultKafkaProducerFactory<>(producerConfig());
     }
-
     @Bean
     public KafkaTemplate<String , String> kafkaTemplate(ProducerFactory<String , String> producerFactory)
     {
