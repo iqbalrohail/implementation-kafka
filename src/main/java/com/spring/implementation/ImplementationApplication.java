@@ -9,11 +9,4 @@ import org.springframework.kafka.core.KafkaTemplate;
 public class ImplementationApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ImplementationApplication.class, args);}
-
-	CommandLineRunner commandLineRunner(KafkaTemplate<String , String > kafkaTemplate)
-	{
-		return args -> {
-		kafkaTemplate.send("kafkaTopicTest" , "Hello this is kafka!");
-		};
-	}
 }
