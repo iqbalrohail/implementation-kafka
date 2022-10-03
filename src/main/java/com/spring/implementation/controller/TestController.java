@@ -6,17 +6,13 @@ import com.spring.implementation.repository.PersonDetailsRepository;
 import com.spring.implementation.repository.TestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 @RestController
 @RequestMapping("/Test")
 public class TestController {
-
     @Autowired
     private TestRepository testRepository;
-
     @Autowired
     private PersonDetailsRepository personDetailsRepository;
-
     @GetMapping("/add")
     public String addCategory()
     {
@@ -26,7 +22,6 @@ public class TestController {
         testRepository.save(testDomain);
         return "Added";
     }
-
     @GetMapping("/db")
     public String addTestData()
     {
@@ -41,5 +36,4 @@ public class TestController {
         personDetailsRepository.save(personDetailsDomain);
         return "Added";
     }
-
 }
