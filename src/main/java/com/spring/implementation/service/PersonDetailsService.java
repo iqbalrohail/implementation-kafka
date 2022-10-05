@@ -27,7 +27,6 @@ public class PersonDetailsService {
     {
         PersonDetailsDomain personDetailsDomain = mapDtoToDomain(personDetailsDto);
         personDetailsRepository.save(personDetailsDomain);
-        kafkaProducerService.producePersonDetailsJsonOnKafka(personDetailsDto);
         String message = "Details have been saved with id "+personDetailsDomain.getReqID();
         MessageDto messageDto = new MessageDto(message);
         return messageDto;

@@ -16,7 +16,6 @@ import java.util.Map;
 @Configuration
 public class KafkaConsumerConfig {
     private static final String KAFKA_BOOTSTRAP_SERVER = "localhost:9092";
-
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, String> factory =
@@ -32,7 +31,7 @@ public class KafkaConsumerConfig {
     public Map<String, Object> consumerProps() {
         Map<String, Object> props = new HashMap<>();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, KAFKA_BOOTSTRAP_SERVER);
-        props.put(ConsumerConfig.GROUP_ID_CONFIG, "ef-group");
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "group_id");
         props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000");
         props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "30000");
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
